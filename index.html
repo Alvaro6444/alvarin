@@ -80,9 +80,14 @@
     function mostrarTarjeta() {
       document.getElementById('inicio').classList.remove('active');
       document.getElementById('tarjeta').classList.add('active');
+
+      // Reproducir música junto con la sorpresa
       const song = document.getElementById('song');
-      song.play();
+      song.play().catch(error => {
+        console.log("El navegador bloqueó la reproducción automática. El usuario debe tocar la pantalla.");
+      });
     }
   </script>
 </body>
 </html>
+ 
