@@ -62,7 +62,8 @@
     <button onclick="mostrarTarjeta()">presionar</button>
   </div>
   
-<audio src="audio.mp3" autoplay muted></audio>
+  <!-- Audio oculto, solo se reproduce al presionar el botón -->
+  <audio id="song" src="audio.mp3"></audio>
   
   <!-- Tarjeta de cumpleaños -->
   <div class="tarjeta" id="tarjeta">
@@ -72,8 +73,6 @@
     <img class="gif-cat" src="https://media.tenor.com/fxG8Tq0uTPAAAAAC/jumping-cat.gif" alt="Gatito saltando" />
   </div>
 
-
-
   <script>
     function mostrarTarjeta() {
       document.getElementById('inicio').classList.remove('active');
@@ -81,7 +80,9 @@
 
       // Reproducir música junto con la sorpresa
       const song = document.getElementById('song');
+      song.currentTime = 0; // Empieza desde el principio
       song.play().catch(error => {
+        alert("El navegador bloqueó la reproducción automática. Vuelve a presionar el botón.");
         console.log("El navegador bloqueó la reproducción automática. El usuario debe tocar la pantalla.");
       });
     }
