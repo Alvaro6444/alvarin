@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Feliz Cumpleaños Kathia</title>
   <style>
     body {
       margin: 0;
@@ -58,6 +58,18 @@
       margin-top: 25px;
       border-radius: 15px;
     }
+    /* Nuevo estilo para el gif bailando */
+    .gif-gato-bailando-container {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    img.gif-gato-bailando {
+      width: 220px;
+      border-radius: 15px;
+    }
   </style>
 </head>
 <body>
@@ -66,6 +78,10 @@
     <h1>🎉  🎉</h1>
     <p>¡Feliz Cumpleaños WERA! </p>
     <button onclick="mostrarTarjeta()">presionar</button>
+    <!-- El gif bailando aparecerá aquí cuando se muestre la tarjeta -->
+    <div class="gif-gato-bailando-container" id="gifBailando" style="display:none;">
+      <img class="gif-gato-bailando" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gato-bailando-1550658206.gif?crop=1xw:1xh;center,top&resize=320:*" alt="Gato bailando" />
+    </div>
   </div>
   
   <!-- Audio oculto, solo se reproduce al presionar el botón -->
@@ -76,19 +92,17 @@
     <h1>
      🎂 ¡Feliz Cumpleaños WERA! 🎂</h1>
     <p> <br>
-       Espero que estes tan orgullosa de ti como yo lo estoy, eres una persona muy muy especial y espero que estes consiente de eso, si tratara de describir lo que te vuelve tan especial tendria que inventar palabras por que simplementes las que existen no harian justicia a lo que me gustaria espresar, No soy una persona muy expresiva pero quiero que sepas que te quiero mucho💕</p>
+       Espero que estes tan orgullosa de ti como yo lo estoy, eres una persona muy muy especial y espero que estes consiente de eso, si tratara de describir lo que te vuelve tan especial tendria que i[...]
     <img class="gif-cat" src="https://media.tenor.com/fxG8Tq0uTPAAAAAC/jumping-cat.gif" alt="Gatito saltando" />
     <img class="gif-gato-random" src="https://i.pinimg.com/originals/31/a7/2a/31a72afda250825d993400c3ef28c55c.gif" alt="Gato random animado" />
-
   </div>
-
-
 
   <script>
     function mostrarTarjeta() {
       document.getElementById('inicio').classList.remove('active');
       document.getElementById('tarjeta').classList.add('active');
-
+      // Mostrar el gif bailando
+      document.getElementById('gifBailando').style.display = "flex";
       // Reproducir música junto con la sorpresa
       const song = document.getElementById('song');
       song.currentTime = 0; // Empieza desde el principio
